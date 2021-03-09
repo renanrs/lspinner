@@ -1,5 +1,5 @@
-# Description
-Lpinner is a easy and light weight spinner to use in your go console applications.
+# Lspinner
+A easy and light weight spinner to use in your go console applications.
 
 # Installing
 Using Lspinner is easy. First, use `go get` to install the latest version
