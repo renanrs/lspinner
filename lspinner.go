@@ -5,14 +5,15 @@ import (
 	"time"
 )
 
+// Options to config Lspinner
 type Options struct {
-	waitingMessage string
+	WaitingMessage string
 }
 
 // New receives message to show while waiting.
 func New(opt Options) *Lspinner {
 	spinner := &Lspinner{}
-	spinner.message = opt.waitingMessage
+	spinner.message = opt.WaitingMessage
 	return spinner
 }
 
