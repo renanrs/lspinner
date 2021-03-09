@@ -21,13 +21,17 @@ In your console application, initialize `Lspinner`, use `Wait` function to show 
 package main
 
 import (
-  "github.com/renanrs/lspinner"
+	"time"
+
+	"github.com/renanrs/lspinner"
 )
 
 func main() {
-  lspinner:= new(Spinner)
-  lspinner.Wait()
+	spinner := lspinner.New(lspinner.Options{})
+	spinner.Wait()
   // code to wait the execution
-  lspinner.Stop()
+
+	time.Sleep(time.Second * 5)
+	spinner.Stop()
 }
 ```
