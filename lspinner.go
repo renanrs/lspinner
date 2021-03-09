@@ -5,21 +5,27 @@ import (
 	"time"
 )
 
-// Spinner shows waiting message with spinner
-type Spinner struct {
+func New(message string) *Lspinner {
+	spinner := &Lspinner{}
+	spinner.message = message
+	return spinner
+}
+
+// Lspinner shows waiting message with spinner
+type Lspinner struct {
 	done    chan struct{}
 	message string
 }
 
 // Stop function stops waiting message
-func (w *Spinner) Stop() {
+func (w *Lspinner) Stop() {
 	if w.done != nil {
 		w.done <- struct{}{}
 	}
 }
 
 // Wait function shows waiting message with spinner
-func (w *Spinner) Wait() {
+func (w *Lspinner) Wait() {
 	w.done = make(chan struct{})
 	if w.message == "" {
 		w.message = "Please, wait..."
